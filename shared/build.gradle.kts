@@ -57,3 +57,7 @@ kotlin {
 dependencies {
     androidRuntimeClasspath(libs.compose.uiTooling)
 }
+
+tasks.withType<org.gradle.api.tasks.testing.Test> {
+    failOnNoDiscoveredTests = false
+}
