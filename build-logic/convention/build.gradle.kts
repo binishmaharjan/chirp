@@ -37,5 +37,17 @@ gradlePlugin {
             id = "com.binish.convention.android.application"
             implementationClass = "AndroidApplicationConventionPlugin"
         }
+        register("androidComposeApplication") {
+            id = "com.binish.convention.android.application.compose"
+            implementationClass = "AndroidApplicationComposeConventionPlugin"
+        }
+        register("cmpApplication") {
+            id = "com.binish.convention.cmp.application"
+            implementationClass = "CmpApplicationConventionPlugin"
+        }
+        register("cmpLibrary") {
+            id = "com.binish.convention.cmp.library"
+            implementationClass = "CmpLibraryConventionPlugin"
+        }
     }
 }
