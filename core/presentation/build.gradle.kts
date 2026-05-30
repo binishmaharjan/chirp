@@ -1,5 +1,5 @@
 plugins {
-    alias(libs.plugins.convention.kmp.library)
+    alias(libs.plugins.convention.cmp.library)
 }
 
 kotlin {
@@ -11,6 +11,7 @@ kotlin {
 
                 // Module dependencies here
                 implementation(projects.core.domain)
+                implementation(projects.core.designsystem)
 
                 // Add KMP dependencies here
             }

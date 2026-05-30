@@ -1,14 +1,16 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import com.android.build.api.dsl.LibraryExtension
 
 plugins {
     alias(libs.plugins.convention.cmp.library)
     alias(libs.plugins.compose.hot.reload)
 }
 
+extensions.configure<LibraryExtension> {
+    namespace = "com.binish.chirp.shared"
+}
+
 kotlin {
-    androidLibrary {
-        namespace = "com.binish.chirp.shared"
-    }
     
     sourceSets {
         androidMain.dependencies {

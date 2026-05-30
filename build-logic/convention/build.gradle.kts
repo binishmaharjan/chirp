@@ -46,14 +46,17 @@ gradlePlugin {
             id = "com.binish.convention.cmp.application"
             implementationClass = "CmpApplicationConventionPlugin"
         }
+        register("kmpLibrary") {
+            id = "com.binish.convention.kmp.library"
+            implementationClass = "KmpLibraryConventionPlugin"
+        }
         register("cmpLibrary") {
             id = "com.binish.convention.cmp.library"
             implementationClass = "CmpLibraryConventionPlugin"
         }
-
-        register("kmpLibrary") {
-            id = "com.binish.convention.kmp.library"
-            implementationClass = "KmpLibraryConventionPlugin"
+        register("cmpFeature") {
+            id = "com.binish.convention.cmp.feature"
+            implementationClass = "CmpFeatureConventionPlugin"
         }
     }
 }
