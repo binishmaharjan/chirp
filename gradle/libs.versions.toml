@@ -166,6 +166,7 @@ convention-cmp-library = { id = "com.binish.convention.cmp.library", version = "
 convention-cmp-feature = { id = "com.binish.convention.cmp.feature", version = "unspecified"}
 convention-kmp-library = { id = "com.binish.convention.kmp.library", version = "unspecified"}
 convention-buildkonfig = { id = "com.binish.convention.buildkonfig", version = "unspecified"}
+convention-room = { id = "com.binish.convention.room", version = "unspecified"}
 
 
 # Android
