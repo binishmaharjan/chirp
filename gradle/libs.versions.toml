@@ -156,6 +156,7 @@ convention-android-application = { id = "com.binish.convention.android.applicati
 convention-android-application-compose = { id = "com.binish.convention.android.application.compose", version = "unspecified"}
 convention-cmp-application = { id = "com.binish.convention.cmp.application", version = "unspecified"}
 convention-cmp-library = { id = "com.binish.convention.cmp.library", version = "unspecified"}
+convention-kmp-library = { id = "com.binish.convention.kmp.library", version = "unspecified"}
 
 # Android
 android-application = { id = "com.android.application", version.ref = "agp" }
