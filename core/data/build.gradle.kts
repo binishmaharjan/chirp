@@ -13,16 +13,19 @@ kotlin {
                 implementation(projects.core.domain)
 
                 // Add KMP dependencies here
+                implementation(libs.bundles.ktor.common)
             }
         }
 
         androidMain {
             dependencies {
+                implementation(libs.ktor.client.okhttp)
             }
         }
 
         iosMain {
             dependencies {
+                implementation(libs.ktor.client.darwin)
             }
         }
     }
