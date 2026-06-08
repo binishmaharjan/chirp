@@ -14,6 +14,7 @@ kotlin {
                 implementation(projects.core.designsystem)
 
                 // Add KMP dependencies here
+                implementation(compose.components.resources)
             }
         }
 
