@@ -1,4 +1,4 @@
-package com.binish.core.presentation.util
+package com.binish.core.designsystem.util
 
 import androidx.compose.material3.adaptive.currentWindowAdaptiveInfo
 import androidx.compose.runtime.Composable
