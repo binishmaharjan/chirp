@@ -1,5 +1,7 @@
 package com.binish.core.designsystem.components.layouts
 
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.fillMaxSize
@@ -49,6 +51,8 @@ fun ChirpSurface(
                 Column(
                     modifier = Modifier
                         .fillMaxSize()
+                        .padding(horizontal = 16.dp)
+                        .verticalScroll(rememberScrollState()),
                 ) {
                     content()
                 }
