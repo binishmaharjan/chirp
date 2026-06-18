@@ -38,6 +38,7 @@ fun RegisterRoot(
     viewModel: RegisterViewModel = viewModel()
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
+
     val snackbarHostState = remember { SnackbarHostState() }
 
     RegisterScreen(
@@ -59,36 +60,33 @@ fun RegisterScreen(
         ChirpAdaptiveFormLayout(
             headerText = stringResource(Res.string.welcome_to_chirp),
             errorText = state.registrationError?.asString(),
-            logo = { ChirpBrandLogo() },
+            logo = { ChirpBrandLogo() }
         ) {
             ChirpTextField(
                 state = state.usernameTextState,
                 placeholder = stringResource(Res.string.username_placeholder),
                 title = stringResource(Res.string.username),
-                supportingText = state.userNameError?.asString() ?: stringResource(Res.string.username_hint),
-                isError = state.userNameError != null,
-                onFocusChanged = { isFocuesd ->
+                supportingText = state.usernameError?.asString()
+                    ?: stringResource(Res.string.username_hint),
+                isError = state.usernameError != null,
+                onFocusChanged = { isFocused ->
                     onAction(RegisterAction.OnInputTextFocusGain)
                 }
             )
-
             Spacer(modifier = Modifier.height(16.dp))
-
             ChirpTextField(
                 state = state.emailTextState,
                 placeholder = stringResource(Res.string.email_placeholder),
                 title = stringResource(Res.string.email),
                 supportingText = state.emailError?.asString(),
                 isError = state.emailError != null,
-                onFocusChanged = { isFocuesd ->
+                onFocusChanged = { isFocused ->
                     onAction(RegisterAction.OnInputTextFocusGain)
                 }
             )
-
             Spacer(modifier = Modifier.height(16.dp))
-
             ChirpPasswordTextField(
-                state = state.passwordTexState,
+                state = state.passwordTextState,
                 placeholder = stringResource(Res.string.password),
                 title = stringResource(Res.string.password),
                 supportingText = state.passwordError?.asString()
@@ -97,12 +95,11 @@ fun RegisterScreen(
                 onFocusChanged = { isFocused ->
                     onAction(RegisterAction.OnInputTextFocusGain)
                 },
-                isPasswordVisible = state.isPasswordVisible,
                 onToggleVisibilityClick = {
-                    onAction(RegisterAction.onTogglePasswordVisibilityClick)
-                }
+                    onAction(RegisterAction.OnTogglePasswordVisibilityClick)
+                },
+                isPasswordVisible = state.isPasswordVisible
             )
-
             Spacer(modifier = Modifier.height(16.dp))
 
             ChirpButton(
@@ -112,9 +109,9 @@ fun RegisterScreen(
                 },
                 enabled = state.canRegister,
                 isLoading = state.isRegistering,
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier
+                    .fillMaxWidth()
             )
-
             Spacer(modifier = Modifier.height(8.dp))
 
             ChirpButton(
@@ -123,7 +120,8 @@ fun RegisterScreen(
                     onAction(RegisterAction.OnLoginClick)
                 },
                 style = ChirpButtonStyle.SECONDARY,
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier
+                    .fillMaxWidth()
             )
         }
     }
