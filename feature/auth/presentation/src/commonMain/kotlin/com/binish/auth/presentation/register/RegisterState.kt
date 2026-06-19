@@ -1,4 +1,4 @@
-package register
+package com.binish.auth.presentation.register
 
 import androidx.compose.foundation.text.input.TextFieldState
 import com.binish.core.presentation.util.UiText

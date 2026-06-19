@@ -1,4 +1,4 @@
-package register
+package com.binish.auth.presentation.register
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -30,16 +30,26 @@ import com.binish.core.designsystem.components.layouts.ChirpSnackbarScaffold
 import com.binish.core.designsystem.components.textfields.ChirpPasswordTextField
 import com.binish.core.designsystem.components.textfields.ChirpTextField
 import com.binish.core.designsystem.theme.ChirpTheme
+import com.binish.core.presentation.util.ObserveAsEvents
 import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
+import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun RegisterRoot(
-    viewModel: RegisterViewModel = viewModel()
+    viewModel: RegisterViewModel = koinViewModel(),
+    onRegisterSuccess: (String) -> Unit
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
-
     val snackbarHostState = remember { SnackbarHostState() }
+
+    ObserveAsEvents(viewModel.events) { event ->
+        when(event) {
+            is RegisterEvent.Success -> {
+                onRegisterSuccess(event.email)
+            }
+        }
+    }
 
     RegisterScreen(
         state = state,

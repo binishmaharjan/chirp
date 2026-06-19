@@ -40,6 +40,9 @@ kotlin {
             implementation(compose.components.resources)
             implementation(libs.jetbrains.compose.viewmodel)
             implementation(libs.jetbrains.lifecycle.compose)
+
+            // DI
+            implementation(libs.bundles.koin.common)
         }
     }
 }
