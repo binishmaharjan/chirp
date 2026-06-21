@@ -43,6 +43,8 @@ kotlin {
 
             // DI
             implementation(libs.bundles.koin.common)
+
+            implementation(libs.jetbrains.compose.navigation)
         }
     }
 }

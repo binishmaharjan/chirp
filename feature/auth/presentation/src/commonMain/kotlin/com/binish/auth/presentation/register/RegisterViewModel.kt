@@ -103,6 +103,7 @@ class RegisterViewModel(
         viewModelScope.launch {
             _state.update { it.copy(
                 isRegistering = true,
+                canRegister = false
             ) }
 
             val email = state.value.emailTextState.text.toString()
@@ -118,6 +119,7 @@ class RegisterViewModel(
                 .onSuccess {
                     _state.update { it.copy(
                         isRegistering = false,
+                        canRegister = true
                     ) }
                     eventChannel.send(RegisterEvent.Success(email))
                 }
